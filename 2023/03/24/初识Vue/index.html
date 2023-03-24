@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>初识Vue | 染墨の小窝</title>
+        <meta name="author" content="染墨" />
+        <meta name="description" content="憋了俩月不知道写啥 想了三天凑两句废话 --有字就行" />
+        <meta name="keywords" content="HTML CSS JavaScript Vue Hexo" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+        <link rel="icon" href="/null" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存&ensp;浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+            </transition>
+            <transition name="into">
+            <div id="main" v-show="!loading">
+                <nav id="menu" ref="menu">
+    <div class="desktop-menu">
+        <a class="title" href="/">
+            <span>染墨の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="curtain" v-show="showMenu" @click="showMenu = !showMenu"></div>
+        <div class="title" @click="showMenu = !showMenu">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;染墨の小窝</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="showMenu">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                </div>
+            </a>
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                </div>
+            </a>
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                </div>
+            </a>
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                </div>
+            </a>
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+
+                <div class="article">
+    <div>
+        <h1>初识Vue</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/3/24
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="0-Vue的意义以好处"><a href="#0-Vue的意义以好处" class="headerlink" title="0.Vue的意义以好处"></a>0.Vue的意义以好处</h1><p>Vue是一套框架，是封装好的组件，使用Vue进行开发可以省略一些基本的相同底层代码，提高效率（类比与C++的类√）</p>
+<h1 id="1-Vue框架原理"><a href="#1-Vue框架原理" class="headerlink" title="1.Vue框架原理"></a>1.Vue框架原理</h1><p>vue框架是基于MVVM设计模式的前端框架，其中的Vue对象是MVVM设计模式中的VM视图模型。<br>Vue对象将页面中要改变的元素和data中变量进行绑定，绑定后它会一直监听data中变量值的改变，当值发生改变时，会自动找到与其绑定的元素并且让元素跟着发生改变，改变元素的过程不需要人工干预，提高了开发效率，而且这个过程不需要像 JavaScript 那样频繁DOM操作去改变页面结构，只是监听一片区域，提高了执行效率。</p>
+<h1 id="2-MVVM设计模式"><a href="#2-MVVM设计模式" class="headerlink" title="2.MVVM设计模式"></a>2.MVVM设计模式</h1><ul>
+<li>Model：模型，数据模型 是服务器获取到数据的部分代码</li>
+<li>View：视图，页面部分代码</li>
+<li>VM：视图模型，它会将页面可能发生改变的元素和变量进行绑定，当变量改变时元素的值也会改变，不需要频繁扫描，提高了效率和用户体验<br>简单来说，MVVM就是建立起了Model和View之间的桥梁，对于其中的双向传递操作进行了封装，减少了底层重复代码的书写。（数据的搬运工√）</li>
+</ul>
+<h1 id="3-Vue的基本使用"><a href="#3-Vue的基本使用" class="headerlink" title="3.Vue的基本使用"></a>3.Vue的基本使用</h1><h3 id="Vue的引入方式："><a href="#Vue的引入方式：" class="headerlink" title="Vue的引入方式："></a>Vue的引入方式：</h3><p>Vue框架有两种引入方式，分别是本地引入以及网络引入</p>
+<h3 id="项目结构主要包括："><a href="#项目结构主要包括：" class="headerlink" title="项目结构主要包括："></a>项目结构主要包括：</h3><ul>
+<li>.eslintrc.js，可以通过它来管理你的校验规则</li>
+<li>babel.config.js，可以在开发中使用 JavaScript 的新特性，并且将其转换为在生产环境中可以跨浏览器运行的旧语法代码</li>
+<li>.browserslistrc，可以通过它来控制需要对哪些浏览器进行支持和优化</li>
+<li><strong>public，这个目录包含一些在 Webpack 编译过程中没有加工处理过的文件（有一个例外：index.html 会有一些处理）</strong></li>
+<li>favicon.ico，项目的图标，当前就是一个 Vue 的 logo</li>
+<li>index.html，应用的模板文件，Vue 应用会通过这个 HTML 页面来运行，也可以通过 lodash 这种模板语法在这个文件里插值</li>
+<li><strong>src，这个是 Vue 应用的核心代码目录</strong></li>
+<li>main.js，应用的入口文件。目前它会初始化 Vue 应用并且制定将应用挂载到 index.html 文件中的哪个 HTML 元素上。通常还会做一些注册全局组件或者添额外的 Vue 库的操作</li>
+<li>App.vue， Vue 应用的根节点组件，往下看可以了解更多关注 Vue 组件的信息</li>
+<li>components，用来存放自定义组件的目录，目前里面会有一个示例组件</li>
+<li>assets，这个目录用来存放像 CSS、图片这种静态资源，但是因为它们属于代码目录下，所以可以用 webpack 来操作和处理。<h3 id="Data函数："><a href="#Data函数：" class="headerlink" title="Data函数："></a>Data函数：</h3>data有两种写法，最好采用函数的写法（避免组件复用时，数据存在引用关系导致组件相互间的数据连锁变化），由vue管理的函数不要写成箭头函数，否则this指向的就不是vuecomponent实例对象（当前组件对象）</li>
+</ul>
+<p><strong>一旦data中的数据改变，那么用到该数据的地方也会自动更新</strong></p>
+<h3 id="PS：this指向问题"><a href="#PS：this指向问题" class="headerlink" title="PS：this指向问题"></a>PS：this指向问题</h3><ul>
+<li>vm只有一个，只有vm能指定挂载点，vm掌柜着众多vc，vc是一个个组件实例对象(每次调用- - Vue.extend，都会返回一个不同的vc)，即一个个组件</li>
+<li>在组件中配置的data，methods，watch等，this指向vc</li>
+<li>在new Vue出来的vue实例对象中，data，methods，watch等，this指向vm<h3 id="Methods方法："><a href="#Methods方法：" class="headerlink" title="Methods方法："></a>Methods方法：</h3><h5 id="事件触发的形式"><a href="#事件触发的形式" class="headerlink" title="事件触发的形式"></a>事件触发的形式</h5></li>
+</ul>
+<p><strong>按键触发（keyup，keydown）</strong></p>
+<ul>
+<li>enter，delete（删除和退格键），esc，space，tab，up，down，left，right</li>
+<li>系统修饰键：ctrl，alt，shift，meta</li>
+<li>keyup：按下修饰键，再按下其它键，释放其它键，触发事件</li>
+<li>Vue.config.keyCodes.自定义键名 = 键码</li>
+</ul>
+<p><strong>鼠标触发</strong></p>
+<ul>
+<li>click，mousemove等等<h5 id="事件的内容（methods中定义）"><a href="#事件的内容（methods中定义）" class="headerlink" title="事件的内容（methods中定义）"></a>事件的内容（methods中定义）</h5><h3 id="Computed属性："><a href="#Computed属性：" class="headerlink" title="Computed属性："></a>Computed属性：</h3>计算属性computed是通过data中的已有属性拼凑而成。借助了Object.defineProperty的getter和setter。get初始化和每次computed依赖data中的数据改变时调用。与methods相比，有缓存机制。计算属性最终会出现在vm上，计算属性被修改时，必须写set函数改变data中的依赖数据，进而引起计算属性的变化。<h3 id="Watch属性："><a href="#Watch属性：" class="headerlink" title="Watch属性："></a>Watch属性：</h3>当监视的属性变化，handler自动调用。通过watch配置或$watch监视</li>
+</ul>
+<h1 id="4-Vue的使用方式"><a href="#4-Vue的使用方式" class="headerlink" title="4.Vue的使用方式"></a>4.Vue的使用方式</h1><h3 id="文本相关"><a href="#文本相关" class="headerlink" title="文本相关"></a>文本相关</h3><ul>
+<li>：插值，定义在标签里，让此处文本内容和变量进行绑定</li>
+<li>v-text=”变量” ：定义在标签中，让元素的文本内容和变量进行绑定</li>
+<li>v-html=”变量”：定义在标签中，让元素的标签内容和变量进行绑定<h3 id="属性绑定"><a href="#属性绑定" class="headerlink" title="属性绑定"></a>属性绑定</h3>让元素属性的值和变量进行单向绑定，当属性值发生变化时变量也发生改变</li>
+<li> 结构：v-bind:属性名=“变量”; 或 :属性名=”变量”;<h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3>定义在标签中，让控件的value值和变量进行双向绑定,变量影响页面 同时页面的改动也会影响变</li>
+<li>结构：v-model=”变量”<h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3>绑定元素的事件，当条件满足触发时，会触发方法</li>
+<li>如：点击事件(鼠标点击时触发)：v-on:click=”方法” 或 @click=”方法”<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3>让元素显示数量和数组进行绑定，变量数组中每一个对象</li>
+<li>结构：v-for=”(变量,i) in 数组变量”   （i 是下标）<h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3>让元素的显示状态和变量进行绑定，结果为 true显示，false不显示</li>
+<li>结构：v-if = ”变量“ 和 v-else</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2023 染墨の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;染墨
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            </transition>
+            
+            <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>

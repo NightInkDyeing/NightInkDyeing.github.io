@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>常用的v指令 | 染墨の小窝</title>
+        <meta name="author" content="染墨" />
+        <meta name="description" content="憋了俩月不知道写啥 想了三天凑两句废话 --有字就行" />
+        <meta name="keywords" content="HTML CSS JavaScript Vue Hexo" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+        <link rel="icon" href="/null" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存&ensp;浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+            </transition>
+            <transition name="into">
+            <div id="main" v-show="!loading">
+                <nav id="menu" ref="menu">
+    <div class="desktop-menu">
+        <a class="title" href="/">
+            <span>染墨の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="curtain" v-show="showMenu" @click="showMenu = !showMenu"></div>
+        <div class="title" @click="showMenu = !showMenu">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;染墨の小窝</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="showMenu">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                </div>
+            </a>
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                </div>
+            </a>
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-box-archive fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                </div>
+            </a>
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-bookmark fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                </div>
+            </a>
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+
+                <div class="article">
+    <div>
+        <h1>常用的v指令</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/3/24
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="1-内容渲染指令"><a href="#1-内容渲染指令" class="headerlink" title="1.内容渲染指令"></a>1.内容渲染指令</h1><h3 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h3><ul>
+<li>v-text=’msg1’<br>将数据源中的数据直接渲染到成为标签的内容</li>
+</ul>
+<p><strong>缺点：v-text会直接覆盖掉标签内本来的值</strong></p>
+<h3 id="插值表达式"><a href="#插值表达式" class="headerlink" title=" :插值表达式"></a>{{}} :插值表达式</h3><p>插值表达式可以添加简单的JS表达式(加减乘除，三元表达式等)，但是不能使用复杂的JS语句</p>
+<h3 id="v-html：可以添加标签-html元素"><a href="#v-html：可以添加标签-html元素" class="headerlink" title="v-html：可以添加标签(html元素)"></a>v-html：可以添加标签(html元素)</h3><h1 id="2-属性绑定指令"><a href="#2-属性绑定指令" class="headerlink" title="2.属性绑定指令"></a>2.属性绑定指令</h1><h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><p>要给标签的属性绑定动态的值，需要在属性前方加上’v-bind:’,也可以简写成’:’</p>
+<ul>
+<li>v-bind:placeholder=”tips”,tips为data中声明的值</li>
+<li>v-bind:style=”{ }” ：代表动态绑定一个样式对象,他的值是一个{}样式对象</li>
+<li>vue提供的模板渲染语法中，还支持JavaScript表达式的运算</li>
+</ul>
+<h1 id="3-事件绑定指令"><a href="#3-事件绑定指令" class="headerlink" title="3.事件绑定指令"></a>3.事件绑定指令</h1><h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><p>原生DOM对象去掉on即可 </p>
+<ul>
+<li>v-on:click   v-on:input   v-on:keyup</li>
+<li>格式：v-on:事件名称=”事件处理函数的名称”</li>
+<li>简写：@事件名称=”事件处理函数的名称”</li>
+</ul>
+<p><strong>绑定的事件可以用小括号进行传参，若无小括号则默认传触发的事件对象(MouseEvent{}),若在有参数的情况下，仍需获取事件对象，可使用$event符号获取事件对象。(@click=”add(n,$event)”)不过开发中不常用</strong></p>
+<h3 id="事件修饰符-加在事件绑定后面"><a href="#事件修饰符-加在事件绑定后面" class="headerlink" title="事件修饰符(加在事件绑定后面)"></a>事件修饰符(加在事件绑定后面)</h3><ul>
+<li>@click.prenvent=”add”: 点击的同时，阻止默认行为(event.preventDefault() )</li>
+<li>form表单提交会默认刷新网页，可以用@submit.prevent阻止</li>
+<li>.stop:阻止事件冒泡</li>
+<li>.capture: 以捕获模式触发当前的事件处理函数</li>
+<li>.once: 绑定的事件只触发一次</li>
+<li>.self: 只有在event.target是当前元素自身时触发事件处理函数<h3 id="按键修饰符-仅用于键盘事件"><a href="#按键修饰符-仅用于键盘事件" class="headerlink" title="按键修饰符(仅用于键盘事件)"></a>按键修饰符(仅用于键盘事件)</h3></li>
+<li>@keyup.enter=””: 仅按下回车键时触发</li>
+<li>@keyup.esc=””: 仅按下esc时触发</li>
+</ul>
+<h1 id="4-双向绑定指令"><a href="#4-双向绑定指令" class="headerlink" title="4.双向绑定指令"></a>4.双向绑定指令</h1><h3 id="双向数据绑定指令-v-model"><a href="#双向数据绑定指令-v-model" class="headerlink" title="双向数据绑定指令:v-model"></a>双向数据绑定指令:v-model</h3><p>只有表单元素才能使用v-model，其他元素或无法呈现内容，或无法修改内容均无法使用该指令<br>表单元素均可使用(可理解为带value属性的标签可用)</p>
+<h4 id="input输入框"><a href="#input输入框" class="headerlink" title="input输入框"></a>input输入框</h4><ul>
+<li>type=”radio”</li>
+<li>type=”checkbox”</li>
+<li>type=”xxxx”<h4 id="textarea文本域"><a href="#textarea文本域" class="headerlink" title="textarea文本域"></a>textarea文本域</h4><h4 id="select下拉菜单"><a href="#select下拉菜单" class="headerlink" title="select下拉菜单"></a>select下拉菜单</h4><h3 id="v-model指令的修饰符"><a href="#v-model指令的修饰符" class="headerlink" title="v-model指令的修饰符"></a>v-model指令的修饰符</h3></li>
+<li>.number:自动将用户输入值转为数值类型</li>
+<li>.trim:自动过滤用户输入的首尾空白字符</li>
+<li>.lazy:在”change”时而非”input”时更新</li>
+</ul>
+<p><strong>中间变化的时候不会同步到data数据源中，只会在最后输入完成后改变</strong></p>
+<h1 id="5-条件渲染指令"><a href="#5-条件渲染指令" class="headerlink" title="5.条件渲染指令"></a>5.条件渲染指令</h1><h3 id="v-if和v-show"><a href="#v-if和v-show" class="headerlink" title="v-if和v-show"></a>v-if和v-show</h3><ul>
+<li>v-if：动态创建和删除元素(页面创建时即为false只有特殊情况才会让其显示时用v-if)</li>
+<li>v-show：为元素添加或删除display:none样式来隐藏或显示元素(频繁切换时建议使用)</li>
+<li><strong>现在电脑对此消耗不大，绝大多数情况无需考虑性能直接使用v-if</strong></li>
+<li>与v-if配合使用的v-else-if()和v-else</li>
+<li><strong>官方建议使用v-for时，后面一定要绑定一个:key=’item.id’(.vue文件中不绑key会直接报错)而且，尽量把id作为key的值</strong></li>
+<li>可提升性能，防止列表状态紊乱</li>
+<li><strong>官方对id的值类型有要求：字符串或数字</strong></li>
+<li><strong>key值不允许重复</strong></li>
+<li>使用索引号index没有用处，因为数组增删改查会改变索引号所对应的数据（如：在数组前面增删数据）</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2023 染墨の小窝
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;染墨
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            </transition>
+            
+            <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>
