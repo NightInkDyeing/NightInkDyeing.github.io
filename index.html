@@ -246,7 +246,7 @@
 <h3 id="v-html：可以添加标签-html元素"><a href="#v-html：可以添加标签-html元素" class="headerlink" title="v-html：可以添加标签(html元素)"></a>v-html：可以添加标签(html元素)</h3><h1 id="2-属性绑定指令"><a href="#2-属性绑定指令" class="headerlink" title="2.属性绑定指令"></a>2.属性绑定指令</h1><h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><p>要给标签的属性绑定动态的值，需要在属性前方加上’v-bind:’,也可以简写成’:’</p>
 <ul>
 <li>v-bind:placeholder=”tips”,tips为data中声明的值</li>
-<li>v-bind:style=”<code>&#123; &#125;</code>“ ：代表动态绑定一个样式对象,他的值是一个<code>&#123;&#125;</code>样式对象</li>
+<li>v-bind:style=”{ }” ：代表动态绑定一个样式对象,他的值是一个{}样式对象</li>
 <li>vue提供的模板渲染语法中，还支持JavaScript表达式的运算</li>
 </ul>
 <h1 id="3-事件绑定指令"><a href="#3-事件绑定指令" class="headerlink" title="3.事件绑定指令"></a>3.事件绑定指令</h1><h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><p>原生DOM对象去掉on即可 </p>
@@ -255,7 +255,7 @@
 <li>格式：v-on:事件名称=”事件处理函数的名称”</li>
 <li>简写：@事件名称=”事件处理函数的名称”</li>
 </ul>
-<p><strong>绑定的事件可以用小括号进行传参，若无小括号则默认传触发的事件对象(MouseEvent<code>&#123;&#125;</code>),若在有参数的情况下，仍需获取事件对象，可使用$event符号获取事件对象。(@click=”add(n,$event)”)不过开发中不常用</strong></p>
+<p><strong>绑定的事件可以用小括号进行传参，若无小括号则默认传触发的事件对象(MouseEvent{}),若在有参数的情况下，仍需获取事件对象，可使用$event符号获取事件对象。(@click=”add(n,$event)”)不过开发中不常用</strong></p>
 <h3 id="事件修饰符-加在事件绑定后面"><a href="#事件修饰符-加在事件绑定后面" class="headerlink" title="事件修饰符(加在事件绑定后面)"></a>事件修饰符(加在事件绑定后面)</h3><ul>
 <li>@click.prenvent=”add”: 点击的同时，阻止默认行为(event.preventDefault() )</li>
 <li>form表单提交会默认刷新网页，可以用@submit.prevent阻止</li>
