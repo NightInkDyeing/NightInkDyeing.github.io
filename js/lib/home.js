@@ -1,15 +1,1 @@
-mixins.home = {
-    mounted() {
-        let menu = this.$refs.menu,
-            background = this.$refs.homeBackground;
-        menu.classList.add("menu-color");
-        let image = background.dataset.image.split(",");
-        let id = Math.floor(Math.random() * image.length);
-        background.style.backgroundImage = `url('${image[id]}')`;
-    },
-    methods: {
-        homeClick() {
-            window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-        },
-    },
-};
+mixins.home={mounted(){let e=this.$refs.menu,o=this.$refs.homeBackground;e.classList.add("menu-color");let t=o.dataset.image.split(",");let s=Math.floor(Math.random()*t.length);o.style.backgroundImage=`url('${t[s]}')`},methods:{homeClick(){window.scrollTo({top:window.innerHeight,behavior:"smooth"})}}};
